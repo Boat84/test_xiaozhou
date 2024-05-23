@@ -35,76 +35,25 @@ Logistic regression is a statistical and machine learning method used for binary
 * Class 0: the negative class (not spam, malignant, not cat)
 * Class 1: the positive class (spam, benign, cat)
 
-### : Mathematical Expression
+###  Mathematical Expression
 * The core of logistic regression is the logistic function, which maps the output of a linear equation to the [0, 1] interval. The logistic function is defined as:
+$$\[ \sigma(z) = \frac{1}{1 + e^{-z}} \]$$
+* where \( z \) is the output of the linear model, given by:
+$$\[ z = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n \]$$
+* Using the logistic function, we convert the linear model's output \( z \) into a probability value:
+$$\[ P(y=1|x) = \sigma(z) = \frac{1}{1 + e^{-z}} \]$$
+* This probability can be used for classification. Typically, a threshold (such as 0.5) is set: if the predicted probability is greater than or equal to the threshold, the instance is classified as the positive class (1); otherwise, it is classified as the negative class (0).
 
-𝜎
-(
-𝑧
-)
-=
-1
-1
-+
-𝑒
-−
-𝑧
-σ(z)= 
-1+e 
-−z
- 
-1
-​
- 
+### Loss Function
 
-where 
-𝑧
-z is the output of the linear model, given by:
+* Logistic regression uses maximum likelihood estimation to find the best parameters, which is usually achieved by minimizing the log loss (also known as logistic loss or cross-entropy loss) function:
 
-𝑧
-=
-𝛽
-0
-+
-𝛽
-1
-𝑥
-1
-+
-𝛽
-2
-𝑥
-2
-+
-⋯
-+
-𝛽
-𝑛
-𝑥
-𝑛
-z=β 
-0
-​
- +β 
-1
-​
- x 
-1
-​
- +β 
-2
-​
- x 
-2
-​
- +⋯+β 
-n
-​
- x 
-n
-​
+$$\[ \text{Log Loss} = -\frac{1}{m} \sum_{i=1}^{m} \left[ y_i \log(p_i) + (1 - y_i) \log(1 - p_i) \right] \]$$
 
-* Class 1: the positive class (spam, benign, cat)
+### Evaluate model performance
+* Using the matrix, we can calculate a number of indicators（e.g.，Accuracy,Precision,Recall,F1_Score)
+* The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (1 - Specificity).and AUC measures the entire two-dimensional area underneath the ROC curve. (The higher the AUC value, the better the performance.)
+
 
 ## <span style="color:black"> 2. Group work: Logistic Regression </span>
 [Link to the repo](https://github.com/neuefische/ds-logistic-regression)
